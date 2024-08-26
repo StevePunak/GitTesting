@@ -26,8 +26,8 @@ DiagramScene::DiagramScene(QMenu *itemMenu, QObject *parent)
 void DiagramScene::setLineColor(const QColor &color)
 {
     myLineColor = color;
-    if (isItemChange(TheArrow::Type)) {
-        TheArrow *item = qgraphicsitem_cast<TheArrow *>(selectedItems().first());
+    if (isItemChange(Arrow2::Type)) {
+        Arrow2 *item = qgraphicsitem_cast<Arrow2 *>(selectedItems().first());
         item->setColor(myLineColor);
         update();
     }
@@ -171,7 +171,7 @@ void DiagramScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
             startItems.first() != endItems.first()) {
             DiagramItem *startItem = qgraphicsitem_cast<DiagramItem *>(startItems.first());
             DiagramItem *endItem = qgraphicsitem_cast<DiagramItem *>(endItems.first());
-            TheArrow *arrow = new TheArrow(startItem, endItem);
+            Arrow2 *arrow = new Arrow2(startItem, endItem);
             arrow->setColor(myLineColor);
             startItem->addArrow(arrow);
             endItem->addArrow(arrow);
