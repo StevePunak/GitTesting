@@ -15,6 +15,7 @@ qt_add_executable(diagramscene
     diagramtextitem.cpp diagramtextitem.h
     main.cpp
     mainwindow.cpp mainwindow.h
+    subdir/testclass1.h subdir/testclass1.cpp
 )
 
 set_target_properties(diagramscene PROPERTIES
