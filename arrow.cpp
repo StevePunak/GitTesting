@@ -10,7 +10,7 @@
 #include <QtMath>
 
 //! [0]
-Arrow::Arrow(DiagramItem *startItem, DiagramItem *endItem, QGraphicsItem *parent)
+TheArrow::TheArrow(DiagramItem *startItem, DiagramItem *endItem, QGraphicsItem *parent)
     : QGraphicsLineItem(parent), myStartItem(startItem), myEndItem(endItem)
 {
     setFlag(QGraphicsItem::ItemIsSelectable, true);
@@ -19,7 +19,7 @@ Arrow::Arrow(DiagramItem *startItem, DiagramItem *endItem, QGraphicsItem *parent
 //! [0]
 
 //! [1]
-QRectF Arrow::boundingRect() const
+QRectF TheArrow::boundingRect() const
 {
     qreal extra = (pen().width() + 20) / 2.0;
 
@@ -31,7 +31,7 @@ QRectF Arrow::boundingRect() const
 //! [1]
 
 //! [2]
-QPainterPath Arrow::shape() const
+QPainterPath TheArrow::shape() const
 {
     QPainterPath path = QGraphicsLineItem::shape();
     path.addPolygon(arrowHead);
@@ -40,7 +40,7 @@ QPainterPath Arrow::shape() const
 //! [2]
 
 //! [3]
-void Arrow::updatePosition()
+void TheArrow::updatePosition()
 {
     QLineF line(mapFromItem(myStartItem, 0, 0), mapFromItem(myEndItem, 0, 0));
     setLine(line);
@@ -48,7 +48,7 @@ void Arrow::updatePosition()
 //! [3]
 
 //! [4]
-void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
+void TheArrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
                   QWidget *)
 {
     if (myStartItem->collidesWithItem(myEndItem))

@@ -9,12 +9,12 @@
 class DiagramItem;
 
 //! [0]
-class Arrow : public QGraphicsLineItem
+class TheArrow : public QGraphicsLineItem
 {
 public:
     enum { Type = UserType + 4 };
 
-    Arrow(DiagramItem *startItem, DiagramItem *endItem,
+    TheArrow(DiagramItem *startItem, DiagramItem *endItem,
           QGraphicsItem *parent = nullptr);
 
     int type() const override { return Type; }

@@ -50,7 +50,7 @@ DiagramItem::DiagramItem(DiagramType diagramType, QMenu *contextMenu,
 //! [0]
 
 //! [1]
-void DiagramItem::removeArrow(Arrow *arrow)
+void DiagramItem::removeArrow(TheArrow *arrow)
 {
     arrows.removeAll(arrow);
 }
@@ -62,7 +62,7 @@ void DiagramItem::removeArrows()
     // need a copy here since removeArrow() will
     // modify the arrows container
     const auto arrowsCopy = arrows;
-    for (Arrow *arrow : arrowsCopy) {
+    for (TheArrow *arrow : arrowsCopy) {
         arrow->startItem()->removeArrow(arrow);
         arrow->endItem()->removeArrow(arrow);
         scene()->removeItem(arrow);
@@ -72,7 +72,7 @@ void DiagramItem::removeArrows()
 //! [2]
 
 //! [3]
-void DiagramItem::addArrow(Arrow *arrow)
+void DiagramItem::addArrow(TheArrow *arrow)
 {
     arrows.append(arrow);
 }
@@ -105,7 +105,7 @@ void DiagramItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 QVariant DiagramItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
     if (change == QGraphicsItem::ItemPositionChange) {
-        for (Arrow *arrow : std::as_const(arrows))
+        for (TheArrow *arrow : std::as_const(arrows))
             arrow->updatePosition();
     }
 

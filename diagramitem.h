@@ -14,7 +14,7 @@ class QMenu;
 class QPolygonF;
 QT_END_NAMESPACE
 
-class Arrow;
+class TheArrow;
 
 //! [0]
 class DiagramItem : public QGraphicsPolygonItem
@@ -25,11 +25,11 @@ public:
 
     DiagramItem(DiagramType diagramType, QMenu *contextMenu, QGraphicsItem *parent = nullptr);
 
-    void removeArrow(Arrow *arrow);
+    void removeArrow(TheArrow *arrow);
     void removeArrows();
     DiagramType diagramType() const { return myDiagramType; }
     QPolygonF polygon() const { return myPolygon; }
-    void addArrow(Arrow *arrow);
+    void addArrow(TheArrow *arrow);
     QPixmap image() const;
     int type() const override { return Type; }
 
@@ -41,7 +41,7 @@ private:
     DiagramType myDiagramType;
     QPolygonF myPolygon;
     QMenu *myContextMenu;
-    QList<Arrow *> arrows;
+    QList<TheArrow *> arrows;
 };
 //! [0]
 
