@@ -2,7 +2,6 @@
 #define TESTCLASS1_H
 
 
-
 class TestClass1
 {
 public:
