@@ -122,7 +122,7 @@ void DiagramScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
             textItem->setFont(myFont);
             textItem->setTextInteractionFlags(Qt::TextEditorInteraction);
             textItem->setZValue(1000.0);
-            connect(textItem, &DiagramTextItem::lostFocus,
+            connect(textItem, &DiagramTextItem::itLostFocus,
                     this, &DiagramScene::editorLostFocus);
             connect(textItem, &DiagramTextItem::selectedChange,
                     this, &DiagramScene::itemSelected);

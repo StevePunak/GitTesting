@@ -23,7 +23,7 @@ public:
     int type() const override { return Type; }
 
 signals:
-    void lostFocus(DiagramTextItem *item);
+    void itLostFocus(DiagramTextItem *item);
     void selectedChange(QGraphicsItem *item);
 
 protected:
