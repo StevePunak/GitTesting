@@ -1,1 +1,66 @@
-README
+Quick start
+Build core modules
+# Install minimal prerequisites (Ubuntu 18.04 as reference)
+sudo apt update && sudo apt install -y cmake g++ wget unzip
+ 
+# Download and unpack sources
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
+unzip opencv.zip
+ 
+# Create build directory
+mkdir -p build && cd build
+ 
+# Configure
+cmake  ../opencv-4.x
+ 
+# Build
+cmake --build .
+Build with opencv_contrib
+# Install minimal prerequisites (Ubuntu 18.04 as reference)
+sudo apt update && sudo apt install -y cmake g++ wget unzip
+ 
+# Download and unpack sources
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip
+unzip opencv.zip
+unzip opencv_contrib.zip
+ 
+# Create build directory and switch into it
+mkdir -p build && cd build
+ 
+# Configure
+cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x
+ 
+# Build
+cmake --build .
+Detailed process
+This section provides more details of the build process and describes alternative methods and tools. Please refer to the OpenCV installation overview tutorial for general installation details and to the OpenCV configuration options reference for configuration options documentation.
+
+Install compiler and build tools
+To compile OpenCV you will need a C++ compiler. Usually it is G++/GCC or Clang/LLVM:
+Install GCC...
+sudo apt install -y g++
+... or Clang:
+sudo apt install -y clang
+OpenCV uses CMake build configuration tool:
+sudo apt install -y cmake
+CMake can generate scripts for different build systems, e.g. make, ninja:
+Install Make...
+sudo apt install -y make
+... or Ninja:
+sudo apt install -y ninja-build
+Install tool for getting and unpacking sources:
+wget and unzip...
+sudo apt install -y wget unzip
+... or git:
+sudo apt install -y git
+Download sources
+There are two methods of getting OpenCV sources:
+
+Download snapshot of repository using web browser or any download tool (~80-90Mb) and unpack it...
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
+unzip opencv.zip
+mv opencv-4.x opencv
+... or clone repository to local machine using git to get full change history (>470Mb):
+git clone https://github.com/opencv/opencv.git
+git -C opencv checkout 4.x
