@@ -27,7 +27,7 @@ QVariant DiagramTextItem::itemChange(GraphicsItemChange change,
 void DiagramTextItem::focusOutEvent(QFocusEvent *event)
 {
     setTextInteractionFlags(Qt::NoTextInteraction);
-    emit lostFocus(this);
+    emit itLostFocus(this);
     QGraphicsTextItem::focusOutEvent(event);
 }
 //! [2]

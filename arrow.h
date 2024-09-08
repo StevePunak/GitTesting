@@ -8,6 +8,7 @@
 
 class DiagramItem;
 
+
 //! [0]
 class Arrow : public QGraphicsLineItem
 {
