@@ -25,6 +25,7 @@ DiagramScene::DiagramScene(QMenu *itemMenu, QObject *parent)
 //! [1]
 void DiagramScene::setLineColor(const QColor &color)
 {
+    // Here is some additional text
     myLineColor = color;
     if (isItemChange(Arrow::Type)) {
         Arrow *item = qgraphicsitem_cast<Arrow *>(selectedItems().first());
