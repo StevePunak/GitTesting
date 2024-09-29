@@ -6,6 +6,8 @@
 
 // Some additional changes
 
+// And yet some more
+
 //! [0]
 DiagramTextItem::DiagramTextItem(QGraphicsItem *parent)
     : QGraphicsTextItem(parent)
