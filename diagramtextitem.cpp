@@ -4,6 +4,8 @@
 #include "diagramtextitem.h"
 #include "diagramscene.h"
 
+// Some additional changes
+
 //! [0]
 DiagramTextItem::DiagramTextItem(QGraphicsItem *parent)
     : QGraphicsTextItem(parent)
